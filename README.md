@@ -1,6 +1,6 @@
-# scrapy-files-hierarchy
+# scrapy-folder-tree
 
- [![build](https://github.com/sp1thas/scrapy-files-hierarchy/actions/workflows/build.yml/badge.svg)](https://github.com/sp1thas/scrapy-files-hierarchy/actions/workflows/build.yml) ![PyPI](https://img.shields.io/pypi/v/scrapy-files-hierarchy) [![GitHub license](https://img.shields.io/github/license/sp1thas/scrapy-files-hierarchy)](https://github.com/sp1thas/scrapy-files-hierarchy/blob/master/LICENSE) ![PyPI - Format](https://img.shields.io/pypi/format/scrapy-files-hierarchy) ![PyPI - Status](https://img.shields.io/pypi/status/scrapy-files-hierarchy) ![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg) ![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg) ![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)
+ [![build](https://github.com/sp1thas/scrapy-folder-tree/actions/workflows/build.yml/badge.svg)](https://github.com/sp1thas/scrapy-folder-tree/actions/workflows/build.yml) ![PyPI](https://img.shields.io/pypi/v/scrapy-folder-tree) [![GitHub license](https://img.shields.io/github/license/sp1thas/scrapy-folder-tree)](https://github.com/sp1thas/scrapy-folder-tree/blob/master/LICENSE) ![PyPI - Format](https://img.shields.io/pypi/format/scrapy-folder-tree) ![PyPI - Status](https://img.shields.io/pypi/status/scrapy-folder-tree) ![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg) ![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg) ![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)
 
 This is a scrapy pipeline that provides an easy way to store files and images using various folder structures.
 
@@ -13,7 +13,7 @@ Given this scraped file: `05b40af07cb3284506acbf395452e0e93bfc94c8.jpg`, you can
 <details>
   <summary>Using file name</summary>
 
-  class: `scrapy_files_hierarchy.ImagesHashHierarchyPipeline`
+  class: `scrapy-folder-tree.ImagesHashTreePipeline`
   
   ```
   full
@@ -28,7 +28,7 @@ Given this scraped file: `05b40af07cb3284506acbf395452e0e93bfc94c8.jpg`, you can
 <details>
   <summary>Using crawling time</summary>
 
-  class: `scrapy_files_hierarchy.ImagesTimeHierarchyPipeline`
+  class: `scrapy-folder-tree.ImagesTimeTreePipeline`
   
   ```
   full
@@ -43,7 +43,7 @@ Given this scraped file: `05b40af07cb3284506acbf395452e0e93bfc94c8.jpg`, you can
 <details>
   <summary>Using crawling date</summary>
 
-  class: `scrapy_files_hierarchy.ImagesDateHierarchyPipeline`
+  class: `scrapy-folder-tree.ImagesDateTreePipeline`
   
   ```
   full
@@ -58,7 +58,7 @@ Given this scraped file: `05b40af07cb3284506acbf395452e0e93bfc94c8.jpg`, you can
 ## Installation
 
 ```shell
-pip install scrapy-files-hierarchy
+pip install scrapy_folder_tree
 ```
 
 ## Usage
@@ -66,8 +66,8 @@ pip install scrapy-files-hierarchy
 Use the following settings in your project:
 ```python
 ITEM_PIPELINES = {
-    'scrapy_files_hierarchy.FilesHierarchyPipeline': 300
+    'scrapy_folder_tree.FilesHashTreePipeline': 300
 }
 
-FOLDER_HIERARCHY_DEPTH = 3
+FOLDER_TREE_DEPTH = 3
 ```

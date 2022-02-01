@@ -1,9 +1,9 @@
 import os
 
-from . import HierarchyBase
+from . import TreeBase
 
 
-class HashHierarchy(HierarchyBase):
+class HashTree(TreeBase):
     def __init__(self, depth: int) -> None:
         self.DEPTH = depth
 

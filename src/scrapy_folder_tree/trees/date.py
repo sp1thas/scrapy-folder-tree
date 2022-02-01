@@ -1,10 +1,10 @@
 import datetime
 import os
 
-from . import HierarchyBase
+from . import TreeBase
 
 
-class DateHierarchy(HierarchyBase):
+class DateTree(TreeBase):
     def build_path(self, filepath) -> str:
         filename = os.path.basename(filepath)
         dir_name = os.path.dirname(filepath)
@@ -14,7 +14,7 @@ class DateHierarchy(HierarchyBase):
         )
 
 
-class TimeHierarchy(HierarchyBase):
+class TimeTree(TreeBase):
     def build_path(self, filepath) -> str:
         filename = os.path.basename(filepath)
         dir_name = os.path.dirname(filepath)
