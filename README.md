@@ -7,7 +7,7 @@ This is a scrapy pipeline that provides an easy way to store files and images us
 
 Given this scraped file: `05b40af07cb3284506acbf395452e0e93bfc94c8.jpg`, you can choose the folloing folder structures:
 
-### `scrapy_files_hierarchy.ImagesHierarchyPipeline`
+### `scrapy_files_hierarchy.ImagesHashHierarchyPipeline`
 
 ```
 full
