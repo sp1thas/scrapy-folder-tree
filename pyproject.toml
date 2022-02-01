@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "scrapy-files-hierarchy"
-version = "0.1.1"
+version = "0.1.2"
 description = "A scrapy pipeline which saves files using hierarchy."
 authors = ["Panagiotis Simakis"]
 license = "MIT"
