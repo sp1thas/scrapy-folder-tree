@@ -44,9 +44,10 @@ pip install scrapy-files-hierarchy
 
 ## Usage
 
+Use the following settings in your project:
 ```python
 ITEM_PIPELINES = {
-    'scrapy_files_hierarchy.FileHierarchyPipeline': 300
+    'scrapy_files_hierarchy.FilesHierarchyPipeline': 300
 }
 
 FOLDER_HIERARCHY_DEPTH = 3
