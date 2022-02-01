@@ -1,3 +1,4 @@
 .idea/
 .mypy_cache/
 dist/
+docs/_build/

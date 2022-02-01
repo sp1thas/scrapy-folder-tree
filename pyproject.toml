@@ -39,6 +39,9 @@ mypy = "^0.931"
 isort = "^5.10.1"
 mkdocs = "^1.2.3"
 mkdocs-material = "^8.1.8"
+Sphinx = "^4.4.0"
+furo = "^2022.1.2"
+myst-parser = "^0.16.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
