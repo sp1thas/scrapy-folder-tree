@@ -8,5 +8,3 @@ Use the following settings in your project:
     ITEM_PIPELINES = {
         'scrapy_folder_tree.FilesHashTreePipeline': 300
     }
-
-    FOLDER_TREE_DEPTH = 3
