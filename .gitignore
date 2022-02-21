@@ -2,3 +2,5 @@
 .mypy_cache/
 dist/
 docs/_build/
+.coverage
+.pytest_cache/
