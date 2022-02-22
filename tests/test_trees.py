@@ -42,11 +42,12 @@ class TestTimeTree(unittest.TestCase):
     @unittest.mock.patch("scrapy_folder_tree.trees.date.datetime", autospec=True)
     def test_build(self, mocked_datetime) -> None:
         mocked_datetime.datetime.now.return_value = datetime.datetime(2022, 1, 1)
-        self.assertEqual(self.tree.build_path("randomname.ext"), "00/00/00/randomname.ext")
+        self.assertEqual(
+            self.tree.build_path("randomname.ext"), "00/00/00/randomname.ext"
+        )
 
 
 class TestTreeAbstract(unittest.TestCase):
     def test_raise_error(self) -> None:
         with self.assertRaises(TypeError):
             TreeBase()
-

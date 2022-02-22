@@ -1,5 +1,5 @@
-from argparse import Namespace
 import os
+from argparse import Namespace
 
 FOLDER_CONFIG = Namespace(
     TREE_DEPTH_NAME="FOLDER_TREE_DEPTH",
