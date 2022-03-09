@@ -58,7 +58,7 @@ Given this scraped file: `05b40af07cb3284506acbf395452e0e93bfc94c8.jpg`, you can
 ## Installation
 
 ```shell
-pip install scrapy_folder_tree
+pip install scrapy-folder-tree
 ```
 
 ## Usage
