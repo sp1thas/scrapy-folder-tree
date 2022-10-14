@@ -31,11 +31,11 @@ jobs:
         path: 'src'
 
   testing:
+    needs: ['static-analysis']
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ 3.6, 3.7, 3.8, 3.9, '3.10' ]
-    needs: ['static-analysis']
+        python-version: [ '3.6', '3.7', '3.8', '3.9', '3.10', '3.11' ]
     steps:
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
@@ -61,11 +61,11 @@ jobs:
           fail_ci_if_error: true
 
   build:
+    needs: ['testing']
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ 3.6, 3.7, 3.8, 3.9, '3.10' ]
-    needs: ['testing']
+        python-version: [ '3.6', '3.7', '3.8', '3.9', '3.10' ]
     steps:
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
