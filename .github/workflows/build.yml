@@ -2,10 +2,10 @@ name: build
 
 on:
   push:
-    # paths:
-    #   - 'src/**'
-    #   - 'tests/**'
-    # branches: [ master ]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+    branches: [ master ]
   pull_request:
     paths:
       - 'src/**'
@@ -13,40 +13,35 @@ on:
     branches: [ master ]
 
 jobs:
-  # static-analysis:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #   - name: setup python
-  #     uses: actions/setup-python@v4
-  #   - name: Isort check
-  #     uses: isort/isort-action@master
-  #   - name: Black Code Formatter
-  #     uses: lgeiger/black-action@v1.0.1
-  #     with:
-  #       args: ". --check"
-  #   - name: Mypy Check
-  #     uses: jpetrucciani/mypy-check@0.761
-  #     with:
-  #       path: 'src'
+  static-analysis:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: setup python
+      uses: actions/setup-python@v4
+    - name: Isort check
+      uses: isort/isort-action@master
+    - name: Black Code Formatter
+      uses: lgeiger/black-action@v1.0.1
+      with:
+        args: ". --check"
+    - name: Mypy Check
+      uses: jpetrucciani/mypy-check@0.761
+      with:
+        path: 'src'
 
   testing:
-    # needs: ['static-analysis']
+    needs: ['static-analysis']
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # python-version: [ '3.6', '3.7', '3.8', '3.9', '3.10', '3.11-dev' ]
-        python-version: [ '3.11-dev' ]
+        python-version: [ '3.6', '3.7', '3.8', '3.9', '3.10', '3.11-dev' ]
     steps:
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
       - uses: actions/checkout@v3
-      # - name: Install system dependencies
-      #   if: ${{ matrix.python-version == '3.11-dev' }}
-      #   run: |
-      #     sudo apt-get install libxml2-dev libxslt-dev python3-lxml
       - name: Install poetry
         run: |
           python -m pip install --upgrade pip
@@ -57,13 +52,13 @@ jobs:
       - name: Run tests
         run: |
           poetry run pytest --cov=src --cov-report=xml
-      # - name: Upload Coverage Report to codecov.io
-      #   uses: codecov/codecov-action@v1
-      #   with:
-      #     token: ${{ secrets.CODECOV_TOKEN }}
-      #     file: ./coverage.xml
-      #     flags: unittests
-      #     fail_ci_if_error: true
+      - name: Upload Coverage Report to codecov.io
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.xml
+          flags: unittests
+          fail_ci_if_error: true
 
   build:
     needs: ['testing']
