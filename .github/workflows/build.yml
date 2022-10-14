@@ -2,9 +2,9 @@ name: build
 
 on:
   push:
-    paths:
-      - 'src/**'
-      - 'tests/**'
+    # paths:
+    #   - 'src/**'
+    #   - 'tests/**'
     # branches: [ master ]
   pull_request:
     paths:
