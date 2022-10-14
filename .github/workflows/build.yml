@@ -16,9 +16,9 @@ jobs:
   static-analysis:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: setup python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
     - name: Isort check
       uses: isort/isort-action@master
     - name: Black Code Formatter
@@ -29,6 +29,7 @@ jobs:
       uses: jpetrucciani/mypy-check@0.761
       with:
         path: 'src'
+
   testing:
     runs-on: ubuntu-latest
     strategy:
@@ -37,10 +38,10 @@ jobs:
     needs: ['static-analysis']
     steps:
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install poetry
         run: |
           python -m pip install --upgrade pip
@@ -58,6 +59,7 @@ jobs:
           file: ./coverage.xml
           flags: unittests
           fail_ci_if_error: true
+
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -66,10 +68,10 @@ jobs:
     needs: ['testing']
     steps:
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install poetry
         run: |
           python -m pip install --upgrade pip
