@@ -47,7 +47,6 @@ jobs:
         if: ${{ matrix.python-version == '3.11-dev' }}
         run: |
           sudo apt-get install libxml2-dev libxslt-dev python3-lxml
-          pip install -U pip setuptools
       - name: Install poetry
         run: |
           python -m pip install --upgrade pip
