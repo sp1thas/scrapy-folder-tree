@@ -30,6 +30,7 @@ class TestHashTree(unittest.TestCase):
 
     def test_object_attributes(self) -> None:
         self.assertEqual(self.tree.DEPTH, 3)
+        self.assertEqual(self.tree.LENGTH, 1)
 
     def test_build(self) -> None:
         self.assertEqual(self.tree.build_path("randomname.ext"), "r/a/n/randomname.ext")
