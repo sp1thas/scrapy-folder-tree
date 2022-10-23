@@ -11,4 +11,11 @@ class HashTree(TreeBase):
     def build_path(self, filepath) -> str:
         filename = os.path.basename(filepath)
         dir_name = os.path.dirname(filepath)
-        return os.path.join(dir_name, *[filename[i:i + self.LENGTH] for i in range(0, self.DEPTH * self.LENGTH, self.LENGTH)], filename)
+        return os.path.join(
+            dir_name,
+            *[
+                filename[i : i + self.LENGTH]
+                for i in range(0, self.DEPTH * self.LENGTH, self.LENGTH)
+            ],
+            filename
+        )
