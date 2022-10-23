@@ -17,6 +17,8 @@ Configuration
 
 :code:`FOLDER_TREE_DEPTH` (default :code:`3`): Specify the folder depth.
 
+:code:`FOLDER_TREE_LENGTH` (default :code:`1`): Specify the folder name length.
+
 Crawling date
 -------------
 
