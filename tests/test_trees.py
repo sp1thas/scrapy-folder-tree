@@ -23,7 +23,7 @@ class TestDateTree(unittest.TestCase):
 
 class TestHashTree(unittest.TestCase):
     def setUp(self) -> None:
-        self.tree = HashTree(FOLDER_CONFIG.TREE_DEPTH_DEFAULT_VALUE)
+        self.tree = HashTree(FOLDER_CONFIG.TREE_DEPTH_DEFAULT_VALUE, FOLDER_CONFIG.TREE_LENGTH_DEFAULT_VALUE)
 
     def test_object_attributes(self) -> None:
         self.assertEqual(self.tree.DEPTH, 3)
