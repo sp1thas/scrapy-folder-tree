@@ -20,6 +20,9 @@ class FolderTreeBasePipeline(FilesPipeline, ABC):
         self.depth = settings.getint(
             FOLDER_CONFIG.TREE_DEPTH_NAME, FOLDER_CONFIG.TREE_DEPTH_DEFAULT_VALUE
         )
+        self.LENGTH = settings.getint(
+            FOLDER_CONFIG.TREE_FOLDER_LENGTH, FOLDER_CONFIG.TREE_LENGTH_DEFAULT_VALUE
+        )
         self.date_format = settings.get(
             FOLDER_CONFIG.TREE_DATE_FORMAT_NAME, FOLDER_CONFIG.TREE_DATE_FORMAT_DEFAULT
         )
@@ -41,6 +44,9 @@ class ImagesTreeBasePipeline(ImagesPipeline, ABC):
             settings = Settings(settings)
         self.depth = settings.getint(
             FOLDER_CONFIG.TREE_DEPTH_NAME, FOLDER_CONFIG.TREE_DEPTH_DEFAULT_VALUE
+        )
+        self.LENGTH = settings.getint(
+            FOLDER_CONFIG.TREE_FOLDER_LENGTH, FOLDER_CONFIG.TREE_LENGTH_DEFAULT_VALUE
         )
         self.date_format = settings.get(
             FOLDER_CONFIG.TREE_DATE_FORMAT_NAME, FOLDER_CONFIG.TREE_DATE_FORMAT_DEFAULT
