@@ -66,7 +66,7 @@ class ImagesTreeBasePipeline(ImagesPipeline, ABC):
 class FilesHashTreePipeline(FolderTreeBasePipeline):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.tree = HashTree(self.depth)
+        self.tree = HashTree(self.depth, self.LENGTH)
 
 
 class FilesDateTreePipeline(FolderTreeBasePipeline):
@@ -84,7 +84,7 @@ class FilesTimeTreePipeline(FolderTreeBasePipeline):
 class ImagesHashTreePipeline(ImagesTreeBasePipeline):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.tree = HashTree(self.depth)
+        self.tree = HashTree(self.depth, self.LENGTH)
 
 
 class ImagesDateTreePipeline(ImagesTreeBasePipeline):

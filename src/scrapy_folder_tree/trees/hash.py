@@ -4,7 +4,7 @@ from . import TreeBase
 
 
 class HashTree(TreeBase):
-    def __init__(self, depth: int, length: int) -> None:
+    def __init__(self, depth: int = 3, length: int = 2) -> None:
         self.DEPTH = depth
         self.LENGTH = length
 
