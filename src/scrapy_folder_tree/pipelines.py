@@ -11,7 +11,6 @@ from .trees.hash import HashTree
 
 
 class FolderTreeBasePipeline(FilesPipeline, ABC):
-
     tree: TreeBase
 
     def __init__(self, store_uri, download_func=None, settings=None):
@@ -36,7 +35,6 @@ class FolderTreeBasePipeline(FilesPipeline, ABC):
 
 
 class ImagesTreeBasePipeline(ImagesPipeline, ABC):
-
     tree: TreeBase
 
     def __init__(self, store_uri, download_func=None, settings=None):

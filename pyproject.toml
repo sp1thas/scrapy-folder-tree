@@ -2,9 +2,8 @@
 name = "scrapy-folder-tree"
 version = "0.1.3"
 description = "A scrapy pipeline which stores files using folder trees."
-authors = ["Panagiotis Simakis"]
+authors = ["Panagiotis Simakis <sp1thas@autistici.org>"]
 license = "MIT"
-maintainers = ["Panagiotis Simakis"]
 readme = "README.md"
 repository = "https://github.com/sp1thas/scrapy-folder-tree"
 keywords = ["scrapy", "scrapy-files-structure", "scrapy-folder-tree", "folder-tree"]
@@ -28,24 +27,13 @@ packages = [{ include = "scrapy_folder_tree", from = "src" }]
 "Bug Tracker" = "https://github.com/sp1thas/scrapy-folder-tree/issues"
 
 [tool.poetry.dependencies]
-python = "^3.7"
-Scrapy = "^2.5.1"
+python = "^3.10"
+Scrapy = "^2.8.0"
 
 [tool.poetry.dev-dependencies]
-black = "^21.12b0"
-pytest = "^6.2.5"
-pytest-cov = "^3.0.0"
-mypy = "^0.931"
-isort = "^5.10.1"
-mkdocs = "^1.2.3"
-mkdocs-material = "^8.1.8"
-Sphinx = "^4.4.0"
-furo = "^2022.1.2"
-myst-parser = "^0.16.1"
-
-[tool.poetry.group.dev.dependencies]
-pillow = "^9.4.0"
+pytest-cov = "^4.0.0"
+Pillow = "^9.4.0"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=1.0.0", "pre-commit>=3.0.4"]
 build-backend = "poetry.core.masonry.api"

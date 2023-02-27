@@ -1,0 +1,35 @@
+ci:
+    skip: [poetry-lock]
+
+repos:
+
+-   repo: https://github.com/python-poetry/poetry
+    rev: '1.3.0'
+    hooks:
+    -   id: poetry-check
+    -   id: poetry-lock
+
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: check-added-large-files
+    -   id: check-ast
+    -   id: check-executables-have-shebangs
+    -   id: check-json
+    -   id: pretty-format-json
+    -   id: check-toml
+    -   id: check-yaml
+        args: [ --unsafe ]
+    -   id: detect-private-key
+    -   id: trailing-whitespace
+
+-   repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+    -   id: black
+
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: 'v1.0.1'
+    hooks:
+    -   id: mypy
+        exclude: 'tests'

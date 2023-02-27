@@ -1,14 +1,11 @@
 # scrapy-folder-tree
 
-[![build](https://github.com/sp1thas/scrapy-folder-tree/actions/workflows/build.yml/badge.svg)](https://github.com/sp1thas/scrapy-folder-tree/actions/workflows/build.yml)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/sp1thas/scrapy-folder-tree/master.svg)](https://results.pre-commit.ci/latest/github/sp1thas/scrapy-folder-tree/master)
 [![codecov](https://codecov.io/gh/sp1thas/scrapy-folder-tree/branch/master/graph/badge.svg?token=Y4LGLWOD11)](https://codecov.io/gh/sp1thas/scrapy-folder-tree)
 ![PyPI](https://img.shields.io/pypi/v/scrapy-folder-tree)
 [![GitHub license](https://img.shields.io/github/license/sp1thas/scrapy-folder-tree)](https://github.com/sp1thas/scrapy-folder-tree/blob/master/LICENSE)
 ![PyPI - Format](https://img.shields.io/pypi/format/scrapy-folder-tree)
 ![PyPI - Status](https://img.shields.io/pypi/status/scrapy-folder-tree)
-![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
-![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)
-![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)
 
 This is a scrapy pipeline that provides an easy way to store files and images using various folder structures.
 
@@ -22,7 +19,7 @@ Given this scraped file: `05b40af07cb3284506acbf395452e0e93bfc94c8.jpg`, you can
   <summary>Using the file name</summary>
 
   class: `scrapy-folder-tree.ImagesHashTreePipeline`
-  
+
   ```
   full
   ├── 0
@@ -37,7 +34,7 @@ Given this scraped file: `05b40af07cb3284506acbf395452e0e93bfc94c8.jpg`, you can
   <summary>Using the crawling time</summary>
 
   class: `scrapy-folder-tree.ImagesTimeTreePipeline`
-  
+
   ```
   full
   ├── 0
@@ -52,7 +49,7 @@ Given this scraped file: `05b40af07cb3284506acbf395452e0e93bfc94c8.jpg`, you can
   <summary>Using the crawling date</summary>
 
   class: `scrapy-folder-tree.ImagesDateTreePipeline`
-  
+
   ```
   full
   ├── 2022
