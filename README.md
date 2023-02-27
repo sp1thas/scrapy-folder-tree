@@ -22,7 +22,7 @@ Given this scraped file: `05b40af07cb3284506acbf395452e0e93bfc94c8.jpg`, you can
   <summary>Using the file name</summary>
 
   class: `scrapy-folder-tree.ImagesHashTreePipeline`
-  
+
   ```
   full
   ├── 0
@@ -37,7 +37,7 @@ Given this scraped file: `05b40af07cb3284506acbf395452e0e93bfc94c8.jpg`, you can
   <summary>Using the crawling time</summary>
 
   class: `scrapy-folder-tree.ImagesTimeTreePipeline`
-  
+
   ```
   full
   ├── 0
@@ -52,7 +52,7 @@ Given this scraped file: `05b40af07cb3284506acbf395452e0e93bfc94c8.jpg`, you can
   <summary>Using the crawling date</summary>
 
   class: `scrapy-folder-tree.ImagesDateTreePipeline`
-  
+
   ```
   full
   ├── 2022
