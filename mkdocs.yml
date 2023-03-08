@@ -1,0 +1,40 @@
+site_name: scrapy-folder-tree
+site_description: A scrapy plugin which stores files and images using various folder tree structures.
+site_author: Panagiotis Simakis
+
+theme:
+  name: material
+  custom_dir: 'docs/overrides'
+  logo: static/bright-logo.png
+  favicon: static/black-logo.png
+  palette:
+    primary: grey
+  features:
+    - navigation.instant
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.keys
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - md_in_html
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+repo_url: https://github.com/sp1thas/scrapy-folder-tree/
+
+nav:
+  - 'Home': 'index.md'
+  - 'Installation': 'installation.md'
+  - 'Usage': 'usage.md'
+  - 'Folder structures':
+      - Filename: 'folder-structures/filename.md'
+      - Crawling date: 'folder-structures/crawling-date.md'
+      - Crawling time: 'folder-structures/crawling-time.md'
+  - 'Development':
+      - Contributing: 'contributing.md'
+      - Testing: 'dev-notes.md'
