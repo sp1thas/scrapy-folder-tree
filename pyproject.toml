@@ -28,7 +28,7 @@ packages = [{ include = "scrapy_folder_tree", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-Scrapy = "^2.8.0"
+Scrapy = "^2"
 
 [tool.poetry.dev-dependencies]
 pytest-cov = "^4.0.0"
