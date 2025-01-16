@@ -4,13 +4,13 @@ from scrapy.pipelines.files import FilesPipeline  # type: ignore
 from scrapy.pipelines.images import ImagesPipeline  # type: ignore
 from scrapy.settings import Settings  # type: ignore
 
-from .config import FOLDER_CONFIG
-from .trees import TreeBase
-from .trees.date import DateTree, TimeTree
-from .trees.hash import HashTree
+from scrapy_folder_tree.config import FOLDER_CONFIG
+from scrapy_folder_tree.trees import TreeBase
+from scrapy_folder_tree.trees.date import DateTree, TimeTree
+from scrapy_folder_tree.trees.hash import HashTree
 
 
-class FolderTreeBasePipeline(FilesPipeline, ABC):
+class FilesTreeBasePipeline(FilesPipeline, ABC):
     tree: TreeBase
 
     def __init__(self, store_uri, download_func=None, settings=None):
@@ -30,8 +30,8 @@ class FolderTreeBasePipeline(FilesPipeline, ABC):
         )
         super().__init__(store_uri, download_func=download_func, settings=settings)
 
-    def file_path(self, *args, **kwargs):
-        return self.tree.build_path(super().file_path(*args, **kwargs))
+    def file_path(self, request, response=None, info=None, *, item=None):
+        return self.tree.build_path(super().file_path(request, response, info, item=item))
 
 
 class ImagesTreeBasePipeline(ImagesPipeline, ABC):
@@ -54,26 +54,26 @@ class ImagesTreeBasePipeline(ImagesPipeline, ABC):
         )
         super().__init__(store_uri, download_func=download_func, settings=settings)
 
-    def file_path(self, *args, **kwargs):
-        return self.tree.build_path(super().file_path(*args, **kwargs))
+    def file_path(self, request, response=None, info=None, *, item=None):
+        return self.tree.build_path(super().file_path(request, response, info, item=item))
 
-    def thumb_path(self, *args, **kwargs):
-        return self.tree.build_path(super().thumb_path(*args, **kwargs))
+    def thumb_path(self, request, thumb_id, response=None, info=None, *, item=None):
+        return self.tree.build_path(super().thumb_path(request, thumb_id, response, info, item=item))
 
 
-class FilesHashTreePipeline(FolderTreeBasePipeline):
+class FilesHashTreePipeline(FilesTreeBasePipeline):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.tree = HashTree(self.depth, self.LENGTH)
 
 
-class FilesDateTreePipeline(FolderTreeBasePipeline):
+class FilesDateTreePipeline(FilesTreeBasePipeline):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.tree = DateTree(self.date_format)
 
 
-class FilesTimeTreePipeline(FolderTreeBasePipeline):
+class FilesTimeTreePipeline(FilesTreeBasePipeline):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.tree = TimeTree(self.time_format)

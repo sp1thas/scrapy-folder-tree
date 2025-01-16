@@ -27,7 +27,7 @@ packages = [{ include = "scrapy_folder_tree", from = "src" }]
 "Bug Tracker" = "https://github.com/sp1thas/scrapy-folder-tree/issues"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.9"
 Scrapy = "^2"
 
 [tool.poetry.dev-dependencies]

@@ -1,6 +1,6 @@
 import os
 
-from . import TreeBase
+from scrapy_folder_tree.trees import TreeBase
 
 
 class HashTree(TreeBase):
