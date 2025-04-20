@@ -1,0 +1,19 @@
+when:
+  - event: push
+
+matrix:
+  PYTHON_VERSION:
+    - 3.10
+    - 3.11
+
+steps:
+  - name: test-python-${PYTHON_VERSION}
+    image: duffn/python-poetry:${PYTHON_VERSION}-slim
+    commands:
+      - poetry install
+      - poetry run pytest
+    when:
+      - event: push
+
+depends_on:
+  - checkout-code

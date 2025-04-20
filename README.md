@@ -1,9 +1,7 @@
 # scrapy-folder-tree
 
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/sp1thas/scrapy-folder-tree/master.svg)](https://results.pre-commit.ci/latest/github/sp1thas/scrapy-folder-tree/master)
-[![codecov](https://codecov.io/gh/sp1thas/scrapy-folder-tree/branch/master/graph/badge.svg?token=Y4LGLWOD11)](https://codecov.io/gh/sp1thas/scrapy-folder-tree)
+[![status-badge](https://ci.codeberg.org/api/badges/14524/status.svg)](https://ci.codeberg.org/repos/14524)
 ![PyPI](https://img.shields.io/pypi/v/scrapy-folder-tree)
-[![GitHub license](https://img.shields.io/github/license/sp1thas/scrapy-folder-tree)](https://github.com/sp1thas/scrapy-folder-tree/blob/master/LICENSE)
 ![PyPI - Format](https://img.shields.io/pypi/format/scrapy-folder-tree)
 ![PyPI - Status](https://img.shields.io/pypi/status/scrapy-folder-tree)
 
