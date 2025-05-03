@@ -7,4 +7,4 @@ steps:
     commands:
       - python -m pip install -q --no-cache-dir --no-warn-script-location pre-commit
       - pre-commit install
-      - pre-commit run
+      - pre-commit run --all-files

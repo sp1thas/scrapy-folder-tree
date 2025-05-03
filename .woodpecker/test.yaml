@@ -1,5 +1,7 @@
 when:
   - event: push
+    path:
+      include: [ '.woodpecker/test.yaml', 'src/*', 'poetry.lock', 'pyproject.toml', 'tests' ]
 
 matrix:
   PYTHON_VERSION:

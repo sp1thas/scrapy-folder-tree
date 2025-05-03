@@ -1,11 +1,13 @@
 when:
   - event: push
     branch: master
+    path:
+      include: [ '.woodpecker/build-docs.yaml', 'docs/*', 'mkdocs.yml' ]
 
 steps:
-  - name: build-docs
+  - name: build
     image: woodpeckerci/plugin-mkdocs:minimal
-  - name: publish-docs
+  - name: deploy
     image: codeberg.org/xfix/plugin-codeberg-pages-deploy:1
     settings:
       folder: site
@@ -13,4 +15,4 @@ steps:
         from_secret: codeberg-ssh-key
 
 depends_on:
-  - test
+  - checkout-code
